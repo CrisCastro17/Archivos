@@ -1,9 +1,4 @@
 
-MATCH (p:Producto) DETACH DELETE p;
-MATCH (c:Cliente) DETACH DELETE c;
-MATCH (v:Venta) DETACH DELETE v;
-MATCH (t:IdTipoProducto) DETACH DELETE t;
-
 
 LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/CrisCastro17/Archivos/main/producto.csv" AS row
 CREATE (n:Producto)
