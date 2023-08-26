@@ -1,7 +1,4 @@
-DROP INDEX ON :Producto(IdProducto);
-DROP INDEX ON :Cliente(ID);
-DROP INDEX ON :Venta(IdVenta);
-DROP INDEX ON :TipoProducto(IdTipoProducto);
+
 MATCH (p:Producto) DETACH DELETE p;
 MATCH (c:Cliente) DETACH DELETE c;
 MATCH (v:Venta) DETACH DELETE v;
@@ -41,11 +38,6 @@ MATCH(pro:Producto) RETURN pro;
 MATCH(cli:Cliente) RETURN cli;
 MATCH(tp:TipoProducto) RETURN tp;
 MATCH(vta:Venta) RETURN vta;
-
-CREATE INDEX ON :Producto(IdProducto);
-CREATE INDEX ON :TipoProducto(IdTipoProducto);
-CREATE INDEX ON :Cliente(IdCliente);
-CREATE INDEX ON :Venta(IdVenta);
 
 MATCH (t:TipoProducto),(p:Producto)
 WHERE t.IdTipoProducto = p.IdTipoProducto
